@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/persitskiydag/project-rostov#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "sass": "^1.32.8"
   },
   "dependencies": {
     "browser-sync": "^2.26.14"
