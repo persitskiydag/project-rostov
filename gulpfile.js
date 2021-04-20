@@ -3,9 +3,8 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 
 
-// Static server
- function bs() {
-     serveSass();
+function bs() {
+    serveSass();
     browserSync.init({
         server: {
             baseDir: "./"
@@ -13,14 +12,16 @@ const sass = require('gulp-sass');
     });
     watch("./*.html").on('change', browserSync.reload);
     watch("./sass/**/*.sass", serveSass);
+    watch("./sass/*.scss", serveSass);
     watch("./js/*.js").on('change', browserSync.reload);
 };
 
- function serveSass() {
+
+function serveSass() {
     return src("./sass/*.sass")
         .pipe(sass())
-        .pipe(gulp.dest("./css"))
+        .pipe(dest("./css"))
         .pipe(browserSync.stream());
 };
 
-exports.serve = bs;
+exports.serve = bs
